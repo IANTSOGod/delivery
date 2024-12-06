@@ -23,9 +23,13 @@ export default function Home({ navigation }: HomeProps) {
   return (
     <View style={HomeStyle.container}>
       <View style={HomeStyle.header}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Profile");
+          }}
+        >
           <View style={HomeStyle.userInfo}>
-            <Avatar path="../../assets/profile.jpg" />
+            <Avatar path="../../assets/profile.jpg" size={50} />
             <Text style={HomeStyle.greeting}>Hello {user.username}</Text>
           </View>
         </TouchableOpacity>
@@ -56,10 +60,25 @@ export default function Home({ navigation }: HomeProps) {
               }}
             />
           </View>
-          {data != "" ? <Text>Nothing here</Text> : <Categories></Categories>}
-          <Text style={{ fontSize: 18, fontWeight: "bold", marginTop: 20 }}>
-            Nos articles pour vous
-          </Text>
+          {data != "" ? (
+            <Text
+              style={{
+                textAlign: "center",
+                marginTop: 50,
+                fontSize: 20,
+                color: "#3700b3",
+              }}
+            >
+              Nothing here
+            </Text>
+          ) : (
+            <>
+              <Categories navigation={navigation}></Categories>
+              <Text style={{ fontSize: 18, fontWeight: "bold", marginTop: 20 }}>
+                Nos articles pour vous
+              </Text>
+            </>
+          )}
         </ScrollView>
       </View>
     </View>

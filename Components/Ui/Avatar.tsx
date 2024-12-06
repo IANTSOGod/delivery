@@ -2,10 +2,11 @@ import { Image } from "react-native";
 import { AvatarStyle } from "../Styles/AvatarStyle";
 
 interface AvatarProps {
-  path: string; // Chemin dynamique de l'image
+  path: string;
+  size: number; // Chemin dynamique de l'image
 }
 
-export default function Avatar({ path }: AvatarProps) {
+export default function Avatar({ path, size }: AvatarProps) {
   const defaultImage = require("../../assets/profile.jpg");
 
   const imageSource =
@@ -13,5 +14,13 @@ export default function Avatar({ path }: AvatarProps) {
       ? { uri: path }
       : defaultImage;
 
-  return <Image source={imageSource} style={AvatarStyle.profileImage} />;
+  return (
+    <Image
+      source={imageSource}
+      style={[
+        AvatarStyle.profileImage,
+        { width: size, height: size, borderRadius: size / 2 },
+      ]}
+    />
+  );
 }
