@@ -5,16 +5,25 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "API_URL": "https://1605-102-17-117-140.ngrok-free.app"
+      }
     },
     "preview": {
       "distribution": "internal",
-      "android": { "buildType": "apk" }
+      "android": { "buildType": "apk" },
+      "env": {
+        "API_URL": "https://1605-102-17-117-140.ngrok-free.app"
+      }
     },
     "production": {
       "distribution": "store",
       "android": {
-        "buildType": "app-bundle"
+        "buildType": "apk"
+      },
+      "env": {
+        "API_URL": "https://1605-102-17-117-140.ngrok-free.app"
       }
     }
   },

@@ -20,7 +20,9 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.iantso.delivery"
+      "package": "com.iantso.delivery",
+      "permissions": [],
+      "config": {}
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,7 +30,8 @@
     "extra": {
       "eas": {
         "projectId": "cbe20ce3-fb90-4db9-8a03-b900a2f9dc78"
-      }
+      },
+      "API_URL": "https://1605-102-17-117-140.ngrok-free.app"
     },
     "owner": "iantso"
   }
