@@ -68,18 +68,27 @@ export default function Login({ navigation }: LoginProps) {
             }}
             text="Log in"
             fill={true}
+            width={300}
+            height={45}
           ></Button>
           <Button
             press={() => {
+              Keyboard.dismiss();
               navigation.navigate("SignUp");
             }}
             text="Sign Up"
             fill={false}
+            width={300}
+            height={45}
           ></Button>
           <Button
-            press={() => {}}
+            press={() => {
+              Keyboard.dismiss();
+            }}
             text="Connect with google"
             fill={false}
+            width={300}
+            height={45}
           ></Button>
         </View>
       </KeyboardAvoidingView>

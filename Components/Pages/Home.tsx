@@ -9,6 +9,9 @@ import Input from "../Ui/Input";
 import Categories from "../Ui/Categories";
 import { RootStackParamList } from "../../App";
 import { StackNavigationProp } from "@react-navigation/stack";
+import Img from "../Ui/Image";
+import Button from "../Ui/Button";
+import Card from "../Ui/Card";
 
 type HomeStackNavigationProps = StackNavigationProp<RootStackParamList, "Home">;
 
@@ -77,6 +80,7 @@ export default function Home({ navigation }: HomeProps) {
               <Text style={{ fontSize: 18, fontWeight: "bold", marginTop: 20 }}>
                 Nos articles pour vous
               </Text>
+              <Card></Card>
             </>
           )}
         </ScrollView>
