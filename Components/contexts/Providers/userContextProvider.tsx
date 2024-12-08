@@ -9,7 +9,8 @@ export default function UserContextProvider({ children }: userContextProps) {
   const [user, setUser] = useState({
     username: "admin",
     email: "admin@native.com",
-    mdp: "123456",
+    profile: "",
+    qrCode: "",
   } as UserCredentials);
 
   const defineUser = (newUser: UserCredentials) => {

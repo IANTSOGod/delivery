@@ -17,5 +17,6 @@ export const ProfileStyle = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     marginTop: -100,
+    alignItems: "center",
   },
 });

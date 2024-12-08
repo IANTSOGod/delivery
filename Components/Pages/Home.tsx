@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { HomeStyle } from "../Styles/HomeStyle";
 import { UserContext } from "../contexts/Created/userContext";
@@ -12,6 +12,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import Img from "../Ui/Image";
 import Button from "../Ui/Button";
 import Card from "../Ui/Card";
+import { AvatarStyle } from "../Styles/AvatarStyle";
 
 type HomeStackNavigationProps = StackNavigationProp<RootStackParamList, "Home">;
 
@@ -32,7 +33,21 @@ export default function Home({ navigation }: HomeProps) {
           }}
         >
           <View style={HomeStyle.userInfo}>
-            <Avatar path="../../assets/profile.jpg" size={50} />
+            {user.profile != "" ? (
+              <>
+                <Image
+                  source={{ uri: user.profile }}
+                  style={[
+                    AvatarStyle.profileImage,
+                    { width: 50, height: 50, borderRadius: 25 },
+                  ]}
+                ></Image>
+              </>
+            ) : (
+              <>
+                <Avatar path="..." size={50}></Avatar>
+              </>
+            )}
             <Text style={HomeStyle.greeting}>Hello {user.username}</Text>
           </View>
         </TouchableOpacity>

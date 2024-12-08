@@ -10,7 +10,9 @@ export default function Avatar({ path, size }: AvatarProps) {
   const defaultImage = require("../../assets/profile.jpg");
 
   const imageSource =
-    path.startsWith("http") || path.startsWith("file")
+    path.startsWith("http") ||
+    path.startsWith("file") ||
+    path.startsWith("https")
       ? { uri: path }
       : defaultImage;
 
